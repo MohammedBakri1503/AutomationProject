@@ -39,7 +39,7 @@ public class SetSettingsTest {
                 "2045,9481803274,0.0061,56591207,35,2.85,64\n" +
                 "2050,9735033990,0.0053,50646143,36,2.95,65\n");
         v.chooseColumns();
-        Thread.sleep(Long.parseLong("10000"));
+        //Thread.sleep(Long.parseLong("10000"));
         assertTrue(v.isVisualPage());
     }
 
