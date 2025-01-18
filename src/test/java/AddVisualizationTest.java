@@ -1,14 +1,16 @@
-import org.example.HomePage;
 import org.example.LoginPage;
+import org.example.NewDashboardPage;
+import org.example.Visual;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class POMSpotifyLoginTest {
+
+
+public class AddVisualizationTest {
     private WebDriver driver;
     private LoginPage loginPage;
 
@@ -16,15 +18,15 @@ public class POMSpotifyLoginTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://localhost:8082/login");
+        driver.get("http://localhost:3000/login");
 
         loginPage = new LoginPage(driver);
     }
 
     @Test
-    public void testValidLogin() {
-        HomePage home = loginPage.loginAsValidUser("user@example.com", "password123");
-        assertTrue(home.isLoggedInSuccessfully());
+    public void testAddVisual() {
+        Visual v = loginPage.loginAsValidUser("admin", "12345").navigateToDashboards().createNewDashboard().AddVisualization();
+        assertTrue(v.isVisualPage());
     }
 
     @AfterEach
