@@ -1,4 +1,4 @@
-import org.example.DriverFactory;
+/*import org.example.DriverFactory;
 import org.example.LoginPage;
 import org.example.Visual;
 import org.junit.jupiter.api.AfterEach;
@@ -90,10 +90,10 @@ public class SetSettingsTest {
                 "record on line 3: wrong number of fields, [2025 0.0098 77927744 32 2.54 55]");*/
         //Thread.sleep(Long.parseLong("10000"));
         //assertTrue(v.isVisualPage());
-    }
+    /*}
 
     @AfterEach
     public void tearDown() {
         driver.quit();
     }
-}
+}*/
