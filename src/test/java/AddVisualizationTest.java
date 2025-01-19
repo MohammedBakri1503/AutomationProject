@@ -21,7 +21,7 @@ public class AddVisualizationTest {
     @BeforeEach
     public void setUp() throws MalformedURLException {
         driver = DriverFactory.getDriver();
-        driver.get("http://localhost:3000/login");
+        driver.get("http://localhost:3000/login")
         loginPage = new LoginPage(driver);
 
     }
