@@ -68,7 +68,6 @@ jobs:
         run: |
           docker run --name grid_container -d -p 4444:4444 --shm-size=2gb selenium/standalone-firefox:133.0-geckodriver-0.35-grid-4.27.0-20250101
       - name: Run Tests
-        working-directory: ./test
         run: |
           export BROWSER=firefox
           export GRID_URL=${{ github.event.inputs.grid_url }}
