@@ -35,4 +35,4 @@ jobs:
       - name: Run API Tests
         working-directory: ../AutomationProject # Adjust this based on where the pom.xml is located
         run: |
-          mvn -q test -Dtest=**/testAPI/**/*.java -Denv=${{ github.event.inputs.environment }} -Dapi.version=${{ github.event.inputs.api_version }}
+          mvn -q test -Dtest=**/testAPI/* -Denv=${{ github.event.inputs.environment }} -Dapi.version=${{ github.event.inputs.api_version }}
