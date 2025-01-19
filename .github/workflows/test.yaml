@@ -37,5 +37,6 @@ jobs:
           echo "API_VERSION=${API_VERSION}" >> $GITHUB_ENV
 
       - name: Run API Tests
+        working-directory: ./testAPI
         run: |
-          mvn -q testAPI 
+          mvn -q testAPI -Denv=${{ github.event.inputs.environment }} -Dapi.version=${{ github.event.inputs.api_version }}
