@@ -78,7 +78,8 @@ public class Visual {
 
     }
 
-    public void addData(String data) {
+    public void addData(String data) throws InterruptedException {
+        Thread.sleep(Long.parseLong("3000"));
         driver.findElement(addData).sendKeys(data);
 
 
