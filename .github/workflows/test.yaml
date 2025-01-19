@@ -39,4 +39,4 @@ jobs:
       - name: Run API Tests
         working-directory: ./testAPI
         run: |
-          mvn -q test -Denv=${{ github.event.inputs.environment }} -Dapi.version=${{ github.event.inputs.api_version }}
+          mvn -q testAPI -Denv=${{ github.event.inputs.environment }} -Dapi.version=${{ github.event.inputs.api_version }}
