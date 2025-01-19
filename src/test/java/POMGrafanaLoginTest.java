@@ -5,6 +5,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,14 +18,18 @@ public class POMGrafanaLoginTest {
     private WebDriver driver;
     private LoginPage loginPage;
 
-    @BeforeEach
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("http://localhost:3000/login");
 
+
+    @BeforeEach
+    public void setUp() throws MalformedURLException {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");   // to launch Chrome without GUI
+        driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
         loginPage = new LoginPage(driver);
+
     }
+
+
 
     @Test
     public void testValidLogin() {
