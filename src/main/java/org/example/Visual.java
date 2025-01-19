@@ -1,6 +1,7 @@
 package org.example;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
 
@@ -30,10 +31,20 @@ public class Visual {
 
     private By refresh = By.cssSelector("#pageContent > div.css-19pv48c > div > div > div.css-rxxai3-body > div > div.css-16hl5pe > div > div.css-1r4g60 > div.button-group.css-8qah51.refresh-picker > button");
 
+    private By chengetime = By.cssSelector("#pageContent > div.css-19pv48c > div > div > div.css-rxxai3-body > div > div.css-16hl5pe > div > div.css-1r4g60 > div.button-group.css-wmojnn > button:nth-child(1)");
+
+    private By saveDashboard = By.cssSelector("#reactRoot > div > div.main-view > header > div.css-1fj7032 > div.css-1ntsjus-NavToolbar-actions > div.css-16lblkh > div > div:nth-child(4) > button");
+    private By dashName = By.cssSelector("#reactRoot > div > div.main-view > div.rc-drawer.rc-drawer-right.css-el6sfw.rc-drawer-open > div.rc-drawer-content-wrapper.css-cifegn-drawer-content-wrapper-md > div > div > div.css-rzpihd > div.scrollbar-view > div > form > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div > div > input");
+
+    private By save = By.cssSelector("#reactRoot > div > div.main-view > div.rc-drawer.rc-drawer-right.css-el6sfw.rc-drawer-open > div.rc-drawer-content-wrapper.css-cifegn-drawer-content-wrapper-md > div > div > div.css-rzpihd > div.scrollbar-view > div > form > div.css-1iuwxif > div > button.css-td06pi-button");
+
+    private By messege = By.cssSelector("#\\:res\\: > div > div");
+
+    private By skiperror = By.cssSelector("#A_31 > div.infinity-query-editor > div > div:nth-child(3) > div:nth-child(2) > div.css-yiuggo > div > div > div > div > div > div:nth-child(3) > div > label > div > input");
     public Visual(WebDriver driver) {
         this.driver = driver;
 
-        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         if (!driver.getTitle().contains("Edit panel - New dashboard - Dashboards - Grafana")) {
             throw new IllegalStateException("This is not the Visulization page. Current page: " + driver.getCurrentUrl());
@@ -78,7 +89,7 @@ public class Visual {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollTop += arguments[1];", element, pixels);
     }
 
-    public void chooseColumns() {
+    public void chooseColumns() throws InterruptedException {
         driver.findElement(parseOptions).click();
         driver.findElement(addColumn).click();
         driver.findElement(addColumn).click();
@@ -94,7 +105,27 @@ public class Visual {
 
 
 
+
+
+
+    }
+    public void saveDashboar() throws InterruptedException {
+        driver.findElement(saveDashboard).click();
+        driver.findElement(dashName).sendKeys("test Dash2");
+
+        driver.findElement(save).click();
+
     }
 
+    public String invalidData() throws InterruptedException {
+         return  driver.findElement(messege).getText();
 
+    }
+
+    public void skiperror() {
+        // Use Actions to move and click
+        Actions actions = new Actions(driver);
+        actions.moveToElement( driver.findElement(skiperror)).click().perform();
+        //driver.findElement(skiperror).click();
+    }
 }

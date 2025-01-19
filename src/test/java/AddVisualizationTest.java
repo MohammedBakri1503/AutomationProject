@@ -24,8 +24,9 @@ public class AddVisualizationTest {
     }
 
     @Test
-    public void testAddVisual() {
+    public void testAddVisual() throws InterruptedException {
         Visual v = loginPage.loginAsValidUser("admin", "12345").navigateToDashboards().createNewDashboard().AddVisualization();
+        //Thread.sleep(30000000);
         assertTrue(v.isVisualPage());
     }
 
