@@ -25,7 +25,7 @@ public class NewDashboardPage {
     public Visual AddVisualization() throws InterruptedException {
 
         driver.findElement(addVisual).click();
-        //Thread.sleep(Long.parseLong("5555555555"));
+        Thread.sleep(Long.parseLong("3000"));
         driver.findElement(dataSource).click();
 
         return new Visual(driver);
