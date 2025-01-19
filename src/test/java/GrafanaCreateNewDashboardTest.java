@@ -21,7 +21,7 @@ public class GrafanaCreateNewDashboardTest {
     @BeforeEach
     public void setUp() throws MalformedURLException {
         driver = DriverFactory.getDriver();
-        driver.get("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app");
+        driver.get("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/login");
         loginPage = new LoginPage(driver);
 
     }
