@@ -79,7 +79,7 @@ public class Visual {
     }
 
     public void addData(String data) throws InterruptedException {
-        Thread.sleep(Long.parseLong("300000000"));
+        //Thread.sleep(Long.parseLong("300000000"));
         driver.findElement(addData).sendKeys(data);
 
 
