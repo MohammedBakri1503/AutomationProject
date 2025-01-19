@@ -1,3 +1,4 @@
+import org.example.DriverFactory;
 import org.example.LoginPage;
 import org.example.Visual;
 import org.junit.jupiter.api.AfterEach;
@@ -5,6 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.net.MalformedURLException;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,12 +20,11 @@ public class SetSettingsTest {
     private LoginPage loginPage;
 
     @BeforeEach
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+    public void setUp() throws MalformedURLException {
+        driver = DriverFactory.getDriver();
         driver.get("http://localhost:3000/login");
-
         loginPage = new LoginPage(driver);
+
     }
 
     @Test

@@ -10,7 +10,7 @@ public class NewDashboardPage {
     private WebDriver driver;
 
     private By addVisual = By.cssSelector("#pageContent > div.css-19pv48c > div > div > div.css-1yrhboa-canvas-content > div.css-6pf3n5 > div > div > div.css-87366u > div > button");
-    private By dataSource = By.cssSelector("body > div:nth-child(15) > div.css-1fuqvhh > div.css-cutunk > div.css-aw7ekp > div.css-rzpihd > div.scrollbar-view > div.css-sna5ro > div > h2 > button");
+    private By dataSource = By.cssSelector("body > div:nth-child(16) > div.css-1fuqvhh > div.css-cutunk > div.css-aw7ekp > div.css-rzpihd > div.scrollbar-view > div.css-sna5ro > div.css-1glyybh > h2 > button");
 
     private By successMessageBy = By.id("toast-container");
     public NewDashboardPage(WebDriver driver) {
@@ -22,9 +22,10 @@ public class NewDashboardPage {
             throw new IllegalStateException("This is not the new Dasshboards page. Current page: " + driver.getCurrentUrl());
         }*/
     }
-    public Visual AddVisualization() {
+    public Visual AddVisualization() throws InterruptedException {
 
         driver.findElement(addVisual).click();
+        //Thread.sleep(Long.parseLong("5555555555"));
         driver.findElement(dataSource).click();
 
         return new Visual(driver);

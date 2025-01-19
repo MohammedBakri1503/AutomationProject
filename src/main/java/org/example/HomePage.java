@@ -14,7 +14,7 @@ public class HomePage {
 
     private By successMessageBy = By.cssSelector("#reactRoot > div > div.main-view > header > div.css-1fj7032 > nav");
     private By openmenu = By.cssSelector("#mega-menu-toggle > svg");
-    private By dashboardbutton = By.xpath("//*[@id=\"reactRoot\"]/div/div[1]/div/div/div[1]/nav/div/div[1]/div[2]/ul/div[4]/li/div/div[2]/div/a/div/div/span");
+    private By dashboardbutton = By.cssSelector("body > div:nth-child(13) > div.css-134s2wf.css-11ejiz0 > nav > div > div.scrollbar-view > div.css-1bqnmih > ul > div:nth-child(4) > li > div > div.css-2jmhat > div > a > div > div");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -28,9 +28,11 @@ public class HomePage {
         return successMessage.isDisplayed();
     }
 
-    public DashboardsPage navigateToDashboards() {
+    public DashboardsPage navigateToDashboards() throws InterruptedException {
         driver.findElement((openmenu)).click();
-        driver.findElement((openmenu)).click();
+        //Thread.sleep(Long.parseLong("2222222222222222"));
+
+        //driver.findElement((openmenu)).click();
 
         driver.findElement(dashboardbutton).click();
         return  new DashboardsPage(driver);

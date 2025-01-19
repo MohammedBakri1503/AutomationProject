@@ -1,5 +1,6 @@
 
 
+import org.example.DriverFactory;
 import org.example.HomePage;
 import org.example.LoginPage;
 import org.example.NewDashboardPage;
@@ -9,6 +10,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.net.MalformedURLException;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GrafanaCreateNewDashboardTest {
@@ -16,16 +19,15 @@ public class GrafanaCreateNewDashboardTest {
     private LoginPage loginPage;
 
     @BeforeEach
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+    public void setUp() throws MalformedURLException {
+        driver = DriverFactory.getDriver();
         driver.get("http://localhost:3000/login");
-
         loginPage = new LoginPage(driver);
+
     }
 
     @Test
-    public void testCreatingNewDashboard() {
+    public void testCreatingNewDashboard() throws InterruptedException {
         NewDashboardPage dash = loginPage.loginAsValidUser("admin", "12345").navigateToDashboards().createNewDashboard();
         //assertTrue(dash.isIndashPage());
     }

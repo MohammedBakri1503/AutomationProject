@@ -1,10 +1,10 @@
+import org.example.DriverFactory;
 import org.example.HomePage;
 import org.example.LoginPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -14,7 +14,7 @@ import java.net.URL;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class POMGrafanaLoginTest {
+public class GrafanaLoginTest {
     private WebDriver driver;
     private LoginPage loginPage;
 
@@ -22,9 +22,8 @@ public class POMGrafanaLoginTest {
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");   // to launch Chrome without GUI
-        driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
+        driver = DriverFactory.getDriver();
+        driver.get("http://localhost:3000/login");
         loginPage = new LoginPage(driver);
 
     }
