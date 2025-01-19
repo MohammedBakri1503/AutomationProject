@@ -29,14 +29,10 @@ jobs:
           distribution: 'temurin'
           java-version: '23'
 
-      - name: Set environment variables
-        run: |
-          export ENVIRONMENT=${{ github.event.inputs.environment }}
-          export API_VERSION=${{ github.event.inputs.api_version }}
-          echo "ENVIRONMENT=${ENVIRONMENT}" >> $GITHUB_ENV
-          echo "API_VERSION=${API_VERSION}" >> $GITHUB_ENV
+      - name: List directory structure
+        run: ls -R
 
       - name: Run API Tests
-        working-directory: ./testAPI
+        working-directory: ./testAPI # Adjust this if the directory is elsewhere
         run: |
-          mvn -q testAPI -Denv=${{ github.event.inputs.environment }} -Dapi.version=${{ github.event.inputs.api_version }}
+          mvn -q test -Denv=${{ github.event.inputs.environment }} -Dapi.version=${{ github.event.inputs.api_version }}
