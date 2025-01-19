@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class DeleteDataSourceTest {
 
 
-    private final String BASE_URL = "http://localhost:3000/api";
+    private final String BASE_URL = "http://localhost:3000/api"
     private final String BEARER_TOKEN = "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff";
 
     @BeforeEach
