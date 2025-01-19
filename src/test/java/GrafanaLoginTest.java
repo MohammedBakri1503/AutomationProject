@@ -31,19 +31,24 @@ public class GrafanaLoginTest {
 
 
     @Test
-    public void testValidLogin() {
+    public void testValidLogin() throws InterruptedException {
+        Thread.sleep(Long.parseLong("55"));
         HomePage home = loginPage.loginAsValidUser("admin", "12345");
         assertTrue(home.isLoggedInSuccessfully());
     }
 
     @Test
-    public void testInvalidLogin()  {
+    public void testInvalidLogin() throws InterruptedException {
+        Thread.sleep(Long.parseLong("55"));
+
         String err = loginPage.loginAsinValidUser("admin","1");
         assertEquals(err,"Invalid username or password");
     }
 
     @Test
-    public void testInvalidLoginUSER()  {
+    public void testInvalidLoginUSER() throws InterruptedException {
+        Thread.sleep(Long.parseLong("55"));
+
         String err = loginPage.loginAsinValidUser("ain","12345");
         assertEquals(err,"Invalid username or password");
     }

@@ -20,9 +20,9 @@ public class LoginPage {
 
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
-        /*if (!driver.getTitle().contains("Grafana")) {
+        if (!driver.getTitle().contains("Grafana")) {
             throw new IllegalStateException("This is not the Login Page. Current page: " + driver.getCurrentUrl());
-        }*/
+        }
     }
 
     public HomePage loginAsValidUser(String userName, String password) {
