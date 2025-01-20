@@ -2,18 +2,7 @@ name: API testing
 
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        required: true
-        type: string
-        description: Environment to run tests against (e.g., dev, staging, prod)
-        default: dev
 
-      api_version:
-        description: 'API Version'
-        required: false
-        type: string
-        default: v1
 
 jobs:
   TestAPI:
