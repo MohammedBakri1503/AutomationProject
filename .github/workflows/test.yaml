@@ -23,4 +23,5 @@ jobs:
 
       - name: Run API Tests
         run: |
-          mvn -q test -Dtest=**/testAPI/* 
+          mvn  test -Dtest=**/testAPI/*
+
