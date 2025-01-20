@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class GetDataSourceTest {
 
 
-        private final String BASE_URL = "http://localhost:3000/api";
+        private final String BASE_URL = "https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api";
         private final String BEARER_TOKEN = "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff";
 
         @Test
@@ -23,7 +23,7 @@ public class GetDataSourceTest {
                     header("Content-Type", "application/json"). // Request format
                     header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Bearer token
                     when().
-                    delete("http://localhost:3000/api/datasources/name/" + dataSourceName);// Endpoint with the data source name
+                    delete("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources/name/" + dataSourceName);// Endpoint with the data source name
 
             String createRequestBody = """
         {

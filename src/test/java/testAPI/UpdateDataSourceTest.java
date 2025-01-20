@@ -51,7 +51,7 @@ public class UpdateDataSourceTest {
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Replace with your Bearer token
                 body(requestBody). // Attach JSON payload
                 when().
-                put("http://localhost:3000/api/datasources/uid/" + uid).
+                put("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources/uid/" + uid).
                 then().
                 statusCode(404);// Expect HTTP 404 Not found
     }
@@ -77,7 +77,7 @@ public class UpdateDataSourceTest {
                         header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff").
                         body(requestBody).
                         when().
-                        post("http://localhost:3000/api/datasources").
+                        post("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources").
                         then().
                         statusCode(200). // Validate that the data source was created
                         body("message", equalTo("Datasource added")). // Confirm the success message
@@ -115,7 +115,7 @@ public class UpdateDataSourceTest {
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff").
                 body(updateRequestBody).
                 when().
-                put("http://localhost:3000/api/datasources/uid/" + uid).
+                put("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources/uid/" + uid).
                 then().
                 statusCode(200). // Validate that the update was successful
                 body("message", equalTo("Datasource updated")). // Confirm the success message
@@ -130,7 +130,7 @@ public class UpdateDataSourceTest {
                 header("Content-Type", "application/json").
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff").
                 when().
-                delete("http://localhost:3000/api/datasources/uid/" + uid).
+                delete("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources/uid/" + uid).
                 then().
                 statusCode(200). // Validate that the deletion was successful
                 body("message", equalTo("Data source deleted")); // Confirm the success message

@@ -25,7 +25,7 @@ public class LoginTest {
                 header("Content-Type", "application/json"). // Request format
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Bearer token
                 when().
-                delete("http://localhost:3000/api/datasources/name/" + dataSourceName);// Endpoint with the data source name
+                delete("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources/name/" + dataSourceName);// Endpoint with the data source name
 
     }
 
@@ -36,7 +36,7 @@ public class LoginTest {
     lotto_resource_returns_200_with_expected_id_and_winners() {
 
         when().
-                get("http://localhost:3000/api/search").
+                get("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/search").
                 then().
                 statusCode(401).
                 body("message", equalTo("Unauthorized"));
@@ -50,7 +50,7 @@ public class LoginTest {
                 header("Content-Type", "application/json"). // Set Content-Type header
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Set Bearer token
                 when().
-                get("http://localhost:3000/api/datasources"). // Replace with your actual API URL
+                get("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources"). // Replace with your actual API URL
                 then().
                 statusCode(200). // Expect HTTP 200 OK
                 body("size()", greaterThan(0)); // Validate response body (example)
@@ -76,7 +76,7 @@ public class LoginTest {
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Bearer token
                 body(requestBody). // Attach JSON payload
                 when().
-                post("http://localhost:3000/api/datasources"). // Replace with your Grafana API URL
+                post("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources"). // Replace with your Grafana API URL
                 then().
                 statusCode(200). // Validate HTTP 200 response
                 body("message", equalTo("Datasource added")). // Validate response message
@@ -105,7 +105,7 @@ public class LoginTest {
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Bearer token
                 body(requestBody). // Attach JSON payload
                 when().
-                post("http://localhost:3000/api/datasources"). // Replace with your Grafana API URL
+                post("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources"). // Replace with your Grafana API URL
                 then().
                 statusCode(200). // Validate HTTP 200 response
                 body("message", equalTo("Datasource added")). // Validate response message
@@ -119,7 +119,7 @@ public class LoginTest {
                 header("Content-Type", "application/json"). // Request format
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Bearer token
                 when().
-                get("http://localhost:3000/api/datasources/id/" + dataSourceName). // Endpoint with data source name
+                get("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources/id/" + dataSourceName). // Endpoint with data source name
                 then().
                 statusCode(200). // Expect HTTP 200 OK
                 body("id", notNullValue()). // Validate that the ID exists
@@ -133,7 +133,7 @@ public class LoginTest {
                 header("Content-Type", "application/json"). // Request format
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Bearer token
                 when().
-                get("http://localhost:3000/api/datasources"). // Replace with your API URL
+                get("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources"). // Replace with your API URL
                 then().
                 statusCode(200). // Expect HTTP 200 OK
                 body("size()", greaterThan(0)). // Ensure the response contains at least one data source

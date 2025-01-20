@@ -28,19 +28,19 @@ public class AddDataSourceTest {
                 header("Content-Type", "application/json"). // Request format
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Bearer token
                 when().
-                delete("http://localhost:3000/api/datasources/name/" + dataSourceName);// Endpoint with the data source name
+                delete("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources/name/" + dataSourceName);// Endpoint with the data source name
         given().
                 header("Accept", "application/json"). // Expected response format
                 header("Content-Type", "application/json"). // Request format
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Bearer token
                 when().
-                delete("http://localhost:3000/api/datasources/name/" + datasource3);// Endpoint with the data source name
+                delete("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources/name/" + datasource3);// Endpoint with the data source name
         given().
                 header("Accept", "application/json"). // Expected response format
                 header("Content-Type", "application/json"). // Request format
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Bearer token
                 when().
-                delete("http://localhost:3000/api/datasources/name/" + datasource2);// Endpoint with the data source name
+                delete("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources/name/" + datasource2);// Endpoint with the data source name
 
     }
 
@@ -64,7 +64,7 @@ public class AddDataSourceTest {
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Bearer token
                 body(requestBody). // Attach JSON payload
                 when().
-                post("http://localhost:3000/api/datasources"). // Replace with your API URL
+                post("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources"). // Replace with your API URL
                 then().
                 statusCode(200). // Expect HTTP 200 OK
                 body("message", equalTo("Datasource added")). // Validate response message
@@ -77,7 +77,7 @@ public class AddDataSourceTest {
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff"). // Bearer token
                 body(requestBody). // Attach JSON payload
                 when().
-                post("http://localhost:3000/api/datasources"). // Replace with your API URL
+                post("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources"). // Replace with your API URL
                 then().
                 statusCode(409);// Expect HTTP 409 Conflict
 
@@ -105,7 +105,7 @@ public class AddDataSourceTest {
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff").
                 body(requestBody).
                 when().
-                post("http://localhost:3000/api/datasources").
+                post("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources").
                 then().
                 statusCode(200).
                 body("message", equalTo("Datasource added")).
@@ -139,7 +139,7 @@ public class AddDataSourceTest {
                 header("Authorization", "Bearer glsa_1CsLxCX7L3ltJvA53hvFzuFCNkBkNu7c_621b7eff").
                 body(requestBody).
                 when().
-                post("http://localhost:3000/api/datasources").
+                post("https://ace4-2a06-c701-78cc-700-b86f-b847-a66b-5c27.ngrok-free.app/api/datasources").
                 then().
                 statusCode(200).
                 body("message", equalTo("Datasource added")).
