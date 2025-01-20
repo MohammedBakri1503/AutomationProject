@@ -1,3 +1,4 @@
+package testAPI;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
