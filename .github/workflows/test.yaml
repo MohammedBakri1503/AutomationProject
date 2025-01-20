@@ -22,6 +22,5 @@ jobs:
         run: ls -R
 
       - name: Run API Tests
-        working-directory: ../AutomationProject # Adjust this based on where the pom.xml is located
         run: |
           mvn -q test -Dtest=**/testAPI/* 
