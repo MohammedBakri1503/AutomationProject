@@ -1,7 +1,4 @@
-import org.example.DriverFactory;
-import org.example.LoginPage;
-import org.example.NewDashboardPage;
-import org.example.Visual;
+import org.example.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,8 +25,20 @@ public class AddVisualizationTest {
 
     @Test
     public void testAddVisual() throws InterruptedException {
-        Visual v = loginPage.loginAsValidUser("admin", "12345").navigateToDashboards().createNewDashboard().AddVisualization();
-        //Thread.sleep(30000000);
+        Thread.sleep(20000);
+
+        HomePage h = loginPage.loginAsValidUser("admin", "12345");
+        Thread.sleep(20000);
+
+        DashboardsPage dash = h.navigateToDashboards();
+        Thread.sleep(20000);
+
+        NewDashboardPage newdash =  dash.createNewDashboard();
+        Thread.sleep(20000);
+
+        Visual v =  newdash.AddVisualization();
+        Thread.sleep(20000);
+
         assertTrue(v.isVisualPage());
     }
 
